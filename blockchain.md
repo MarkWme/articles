@@ -68,7 +68,8 @@ Now imagine that the data we're working with is not a name or the text of a book
 
 A block contains our data and the hash of the data.
 
-Which is straightforward enough. However, most Blockchains introduce another idea here, which is Mining. Mining is one of the tactics employed to ensure the integrity of the data in the Blockchain.
+Which is straightforward enough. However, most Blockchains introduce another idea here, which is Mining. Mining is one of the tactics employed to ensure the integrity of the data in the Blockchain. 
+
 We saw earlier that my name produced a particular hash value. But let's say that we've decided that we will only accept a hash value as being valid if it starts with a zero. We know that by changing the data passed to the hashing function we get a different hash result. So, what happens if I place a numeric value before my name.
 
     1-Mark Whitby --> 349a51c2bded8507194cb1c0c66d9c8bd7ad734c1bd03c6509cd1bb0625c2d1e
