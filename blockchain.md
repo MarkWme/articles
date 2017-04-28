@@ -16,6 +16,17 @@ Bitcoin, therefore, has many desirable features and it wasn't long before people
 
 The Blockchain that supports Bitcoin contains more than just blocks of transaction data. Each block also contains scripts that are executed by each node of the Bitcoin network. The script language is specific to Bitcoin, designed to support the essential operations required for Bitcoin transactions and nothing more. So, ideas have been forming as to how the Blockchain could support more complex transactions. 
 
+### Introduce mining, proof of work, move Blockchain 2.0 stuff to part 3.
+
+Mining
+If we had access to a trustworthy centralized service, this system would be trivial to implement; it could be coded exactly as described, using a centralized server's hard drive to keep track of the state. However, with Bitcoin we are trying to build a decentralized currency system, so we will need to combine the state transition system with a consensus system in order to ensure that everyone agrees on the order of transactions. Bitcoin's decentralized consensus process requires nodes in the network to continuously attempt to produce packages of transactions called "blocks". The network is intended to create one block approximately every ten minutes, with each block containing a timestamp, a nonce, a reference to (i.e., hash of) the previous block and a list of all of the transactions that have taken place since the previous block. Over time, this creates a persistent, ever-growing, "blockchain" that continually updates to represent the latest state of the Bitcoin ledger.
+
+The one validity condition present in the above list that is not found in other systems is the requirement for "proof of work". The precise condition is that the double-SHA256 hash of every block, treated as a 256-bit number, must be less than a dynamically adjusted target, which as of the time of this writing is approximately 2187. The purpose of this is to make block creation computationally "hard", thereby preventing Sybil attackers from remaking the entire blockchain in their favor. Because SHA256 is designed to be a completely unpredictable pseudorandom function, the only way to create a valid block is simply trial and error, repeatedly incrementing the nonce and seeing if the new hash matches.
+
+Compensation / reward
+
+### End new stuff
+
 The implementation of Blockchain in Bitcoin and other cryptocurrencies is commonly referred to as Blockchain 1.0. The idea of Blockchain 2.0 has been around for a couple of years now and it generally refers to implementations that allow data and code to be stored together in the Blockchain. The code is more advanced than Bitcoin scripts, attempting to provide more complete programming languages that move beyond confirmation of Bitcoin transactions and allow more operations to be performed. These are called Smart Contracts.
 
 Let's say that you wanted to execute some financial transaction at a future date if certain conditions are met. The code for that transaction would be written and stored in the Blockchain. Because we know that the Blockchain cannot be changed, we know that either the conditions will never be met and the code never executed, or the conditions will be met and the code we stored will get executed and will be the exact code we committed to the Blockchain. Even if the conditions are met several years into the future, we can be assured that the code being run will not have changed.
@@ -101,4 +112,32 @@ You could fix this by generating new hashes all the way along the block. But tha
 Blockchains solve the potential problem of someone modifying data and then re-mining the hash values throughout the chain or a rogue node adding a fraudulent block by maintaining multiple distributed copies.
 
 If one copy of the Blockchain has been modified, then it will stand out from other copies as being different. Exactly how the various Blockchain based technologies determine which chain is the bad one and which are the good ones has a bit more to it than simply comparing copies, but by maintaining multiple distributed copies each owned by different independent entities, it will be obvious if someone attempts to maliciously interfere with the Blockchain.
+
+# Blockchain - The Enterprise
+
+In part one of this series, I introduced Bitcoin. Bitcoin is exclusively used as a digital currency 
+
+Proof of work / mining is too resource intensive
+
+
+automatically sending money from one person to another but only when a certain set of conditions are met.
+
+With Ethereum, a piece of code could automatically transfer the home ownership to the buyer and the funds to the seller after a deal is agreed upon without needing a third party to execute on their behalf.
+
+Identity
+There are many websites a person can create a digital identity on (e.g. Facebook, Twitter, LinkedIn). This is cumbersome to manage and at the end of the day you are not in full control of your information as it is still owned by a centralized entity. With Ethereum you can have a decentralized identity management system like uPort that allows you to be in full control of your data. There is no centralized server that has access to your private data, can get hacked, edit your information, or get shut down.
+
+Proof of work / no economic barrier to entry / just need hardware
+
+Building solutions on top of Bitcoin's blockchain vs. creating new blockchains
+
+Scripting, lacks features, in some cases intentionally to prevent abuse / errors causing problems
+
+Ethereum provides a full featured programming language which theoretically allows the implementation of any scenario, not just the exchange of digital currencies.
+
+Smart contracts, cryptographic "boxes" that contain value and only unlock it if certain conditions are met, 
+
+Ether pays for transaction fees.
+
+Gas prevents denial of service attacks, prevents accidental or malicious infinite loops.
 
